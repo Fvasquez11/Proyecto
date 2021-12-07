@@ -31,10 +31,10 @@ public class LinkList {
         return temp;                // return deleted link
     }
 // -------------------------------------------------------------
-    public void insertLast(int id, Orden dd){
-        Link newLink = new Link(id, dd);
-        Link current = first;
-        while(current.next != null){
+    public void insertLast(int id, Orden dd){ // insert at the end of the list
+        Link newLink = new Link(id, dd); // make a new link
+        Link current = first;   // start at the head
+        while(current.next != null){ // 
             current = current.next;
         }
         current.next = newLink;

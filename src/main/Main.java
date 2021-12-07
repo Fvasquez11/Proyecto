@@ -1,6 +1,6 @@
 package main;
 
-import controlador.ControladorLista;
+import controlador.ControladorMenu;
 
 /**
  *
@@ -9,7 +9,11 @@ import controlador.ControladorLista;
 public class Main {
 
     public static void main(String[] args) {
-        ControladorLista controlador = new ControladorLista();
-        controlador.test();
+        
+        ControladorMenu cMenu = new ControladorMenu();
+        cMenu.iniciarMenu();
+        
+        //ControladorLista controlador = new ControladorLista();
+        //controlador.test();
     }  
 }

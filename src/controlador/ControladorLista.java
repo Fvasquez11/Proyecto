@@ -1,15 +1,35 @@
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Date;
 import modelo.LinkList;
 import modelo.Orden;
+import vista.VistaLista;
 
 /**
  *
  * @author fvasq
  */
-public class ControladorLista {
+public class ControladorLista implements ActionListener{
     
+    private VistaLista vistaLista;
+
+    public ControladorLista() {
+        this.vistaLista = new VistaLista();
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void iniciarLista(){
+        System.out.println("Se inició la ventana Lista");
+    }
+    
+    
+// -------------------------------------------------------------
     public void test(){
         LinkList lista = new LinkList();
         
@@ -70,7 +90,6 @@ public class ControladorLista {
         lista.insertSorted(3, orden3);
         lista.insertSorted(4, orden4);
         
-        lista.displayList();
-        
-    }
+        lista.displayList();   
+    } //Test
 }
