@@ -71,5 +71,6 @@ public class ControladorLista {
         lista.insertSorted(4, orden4);
         
         lista.displayList();
+        
     }
 }
