@@ -13,18 +13,19 @@ import vista.VistaLista;
  */
 public class ControladorLista implements ActionListener{
     
-    private VistaLista vistaLista;
+    private VistaLista listaVista;
 
     public ControladorLista() {
-        this.vistaLista = new VistaLista();
+        this.listaVista = new VistaLista();
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     public void iniciarLista(){
+        this.listaVista.setVisible(true);
         System.out.println("Se inició la ventana Lista");
     }
     
