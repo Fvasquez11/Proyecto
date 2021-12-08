@@ -25,8 +25,13 @@ public class VistaMenu extends javax.swing.JFrame {
         nuevaOrden = new javax.swing.JButton();
         listaOrdenes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(440, 440));
+        setMinimumSize(new java.awt.Dimension(440, 440));
+        setPreferredSize(new java.awt.Dimension(440, 440));
+        getContentPane().setLayout(null);
 
         nuevaOrden.setText("Nueva orden");
         nuevaOrden.addActionListener(new java.awt.event.ActionListener() {
@@ -34,37 +39,20 @@ public class VistaMenu extends javax.swing.JFrame {
                 nuevaOrdenActionPerformed(evt);
             }
         });
+        getContentPane().add(nuevaOrden);
+        nuevaOrden.setBounds(10, 295, 140, 40);
 
         listaOrdenes.setText("Lista de ordenes");
+        getContentPane().add(listaOrdenes);
+        listaOrdenes.setBounds(241, 297, 130, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rsz_logotipo_proyecto_de_complejidad.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/200logo.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(110, 10, 220, 190);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(nuevaOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                .addGap(43, 43, 43)
-                .addComponent(listaOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(83, 83, 83))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(76, 76, 76)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nuevaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listaOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/480logo2.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-10, -40, 540, 510);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,6 +99,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JButton listaOrdenes;
     public javax.swing.JButton nuevaOrden;
     // End of variables declaration//GEN-END:variables
