@@ -5,12 +5,15 @@ package vista;
  * @author fvasq
  */
 public class VistaMenu extends javax.swing.JFrame {
+   
+    
 
     /**
      * Creates new form Menu
      */
     public VistaMenu() {
         initComponents();
+      
     }
 
     /**
@@ -22,11 +25,21 @@ public class VistaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nuevaOrden = new javax.swing.JButton();
-        listaOrdenes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        listaOrdenes = new javax.swing.JButton();
+        nuevaOrden = new javax.swing.JButton();
+        Logo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/238.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        listaOrdenes.setText("Lista de ordenes");
+        getContentPane().add(listaOrdenes);
+        listaOrdenes.setBounds(250, 320, 137, 39);
 
         nuevaOrden.setText("Nueva orden");
         nuevaOrden.addActionListener(new java.awt.event.ActionListener() {
@@ -34,37 +47,18 @@ public class VistaMenu extends javax.swing.JFrame {
                 nuevaOrdenActionPerformed(evt);
             }
         });
+        getContentPane().add(nuevaOrden);
+        nuevaOrden.setBounds(30, 320, 115, 39);
 
-        listaOrdenes.setText("Lista de ordenes");
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rsz_logotipo_proyecto_de_complejidad.png"))); // NOI18N
+        Logo.setToolTipText("");
+        getContentPane().add(Logo);
+        Logo.setBounds(140, 10, 170, 170);
 
-        jLabel1.setText("Logo");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(nuevaOrden)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(listaOrdenes)
-                .addGap(56, 56, 56))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nuevaOrden)
-                    .addComponent(listaOrdenes))
-                .addGap(106, 106, 106))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/450.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 420, 430);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,8 +104,17 @@ public class VistaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Logo;
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JButton listaOrdenes;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton listaOrdenes;
     public javax.swing.JButton nuevaOrden;
     // End of variables declaration//GEN-END:variables
+    
+    
+    
+  
 }
+
+
+
