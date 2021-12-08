@@ -40,11 +40,11 @@ public class VistaMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nuevaOrden);
-        nuevaOrden.setBounds(10, 295, 140, 40);
+        nuevaOrden.setBounds(40, 300, 140, 40);
 
         listaOrdenes.setText("Lista de ordenes");
         getContentPane().add(listaOrdenes);
-        listaOrdenes.setBounds(241, 297, 130, 40);
+        listaOrdenes.setBounds(240, 300, 130, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/200logo.png"))); // NOI18N
         getContentPane().add(jLabel1);
