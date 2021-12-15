@@ -2,7 +2,7 @@ package modelo;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class Link {
     public int iData;               // data item

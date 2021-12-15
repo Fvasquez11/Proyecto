@@ -2,7 +2,7 @@ package vista;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class VistaOrden extends javax.swing.JFrame {
 
@@ -22,21 +22,150 @@ public class VistaOrden extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel2 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        nombreC = new javax.swing.JTextField();
+        rutC = new javax.swing.JTextField();
+        direccionC = new javax.swing.JTextField();
+        articulosC = new javax.swing.JTextField();
+        diaDespacho = new javax.swing.JComboBox<>();
+        mesDespacho = new javax.swing.JComboBox<>();
+        añoDespacho = new javax.swing.JComboBox<>();
+        volverMenu = new javax.swing.JButton();
+        crearOrden = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(548, 445));
+        getContentPane().setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Nombre del Comprador:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 80, 145, 15);
+
+        titulo.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
+        titulo.setText("Nueva Orden");
+        getContentPane().add(titulo);
+        titulo.setBounds(130, 20, 224, 43);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Rut:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(40, 120, 27, 15);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Dirección:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(40, 170, 59, 15);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Artículo(s):");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(40, 220, 68, 15);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Fecha de Despacho:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(40, 280, 120, 15);
+
+        nombreC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nombreC);
+        nombreC.setBounds(260, 70, 239, 41);
+
+        rutC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rutCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(rutC);
+        rutC.setBounds(260, 120, 113, 31);
+
+        direccionC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                direccionCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(direccionC);
+        direccionC.setBounds(260, 170, 239, 29);
+
+        articulosC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                articulosCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(articulosC);
+        articulosC.setBounds(260, 210, 239, 46);
+
+        diaDespacho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        diaDespacho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diaDespachoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(diaDespacho);
+        diaDespacho.setBounds(260, 280, 61, 20);
+
+        mesDespacho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        getContentPane().add(mesDespacho);
+        mesDespacho.setBounds(340, 280, 79, 20);
+
+        añoDespacho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2021", "2022" }));
+        getContentPane().add(añoDespacho);
+        añoDespacho.setBounds(430, 280, 63, 20);
+
+        volverMenu.setText("Volver");
+        getContentPane().add(volverMenu);
+        volverMenu.setBounds(60, 340, 125, 53);
+
+        crearOrden.setText("Crear Orden");
+        crearOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearOrdenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(crearOrden);
+        crearOrden.setBounds(370, 340, 125, 53);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/orden.fondo.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(0, 0, 570, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreCActionPerformed
+
+    private void rutCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rutCActionPerformed
+
+    private void direccionCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_direccionCActionPerformed
+
+    private void articulosCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articulosCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_articulosCActionPerformed
+
+    private void crearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearOrdenActionPerformed
+
+    private void diaDespachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaDespachoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diaDespachoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -75,5 +204,21 @@ public class VistaOrden extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextField articulosC;
+    public javax.swing.JComboBox<String> añoDespacho;
+    public javax.swing.JButton crearOrden;
+    public javax.swing.JComboBox<String> diaDespacho;
+    public javax.swing.JTextField direccionC;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    public javax.swing.JComboBox<String> mesDespacho;
+    public javax.swing.JTextField nombreC;
+    public javax.swing.JTextField rutC;
+    private javax.swing.JLabel titulo;
+    public javax.swing.JButton volverMenu;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package vista;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class VistaLista extends javax.swing.JFrame {
 
     /**
-     * Creates new form Lista
+     * Creates new form VistaLista
      */
     public VistaLista() {
         initComponents();
@@ -22,31 +27,122 @@ public class VistaLista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnDespachado = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableOrdenes = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableDespachos = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1080, 935));
+        setMinimumSize(new java.awt.Dimension(1080, 935));
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel2.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
+        jLabel2.setText("Listado de Ventas");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(385, 40, 310, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        btnDespachado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnDespachado.setText("Despachado");
+        getContentPane().add(btnDespachado);
+        btnDespachado.setBounds(470, 400, 140, 50);
+
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(800, 800, 140, 50);
+
+        btnVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVolver.setText("Volver");
+        getContentPane().add(btnVolver);
+        btnVolver.setBounds(140, 800, 140, 50);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 250));
+
+        tableOrdenes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Emision", "Nombre", "Rut", "Articulos", "Direccion", "Estado", "Despacho"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableOrdenes.setColumnSelectionAllowed(true);
+        tableOrdenes.setMaximumSize(new java.awt.Dimension(800, 250));
+        tableOrdenes.setMinimumSize(new java.awt.Dimension(800, 250));
+        tableOrdenes.setPreferredSize(new java.awt.Dimension(800, 250));
+        tableOrdenes.getTableHeader().setResizingAllowed(false);
+        tableOrdenes.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tableOrdenes);
+        tableOrdenes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tableOrdenes.getColumnModel().getColumnCount() > 0) {
+            tableOrdenes.getColumnModel().getColumn(0).setPreferredWidth(10);
+        }
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(140, 120, 800, 250);
+
+        tableDespachos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Emision", "Nombre", "Rut", "Articulos", "Direccion", "Estado", "Despacho"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableDespachos.setMaximumSize(new java.awt.Dimension(800, 250));
+        tableDespachos.setMinimumSize(new java.awt.Dimension(800, 250));
+        tableDespachos.setPreferredSize(new java.awt.Dimension(800, 250));
+        tableDespachos.getTableHeader().setResizingAllowed(false);
+        tableDespachos.getTableHeader().setReorderingAllowed(false);
+        tableDespachos.setUpdateSelectionOnSort(false);
+        jScrollPane2.setViewportView(tableDespachos);
+        tableDespachos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tableDespachos.getColumnModel().getColumnCount() > 0) {
+            tableDespachos.getColumnModel().getColumn(0).setPreferredWidth(10);
+        }
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(140, 485, 800, 250);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Rapidin.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1080, 900);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,9 +173,6 @@ public class VistaLista extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -90,6 +183,14 @@ public class VistaLista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton btnDespachado;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable tableDespachos;
+    public javax.swing.JTable tableOrdenes;
     // End of variables declaration//GEN-END:variables
 }

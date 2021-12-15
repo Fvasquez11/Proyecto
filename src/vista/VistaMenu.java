@@ -2,7 +2,7 @@ package vista;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class VistaMenu extends javax.swing.JFrame {
 
@@ -52,7 +52,7 @@ public class VistaMenu extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/480logo2.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-10, -40, 540, 510);
+        jLabel2.setBounds(-10, -40, 460, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -1,8 +1,10 @@
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez - Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class LinkList {
     private Link first;            // ref to first link on list
@@ -31,6 +33,24 @@ public class LinkList {
         return temp;                // return deleted link
     }
 // -------------------------------------------------------------
+    public void delete(int id){
+        if (first == null){
+            return;
+        }
+        Link current = first;
+        if(current.iData == id){
+            deleteFirst();
+            return;
+        }
+        while(current.next != null){
+            if(current.next.iData == id){
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+    }
+// -------------------------------------------------------------
     public void insertLast(int id, Orden dd){ // insert at the end of the list
         Link newLink = new Link(id, dd); // make a new link
         Link current = first;   // start at the head
@@ -57,13 +77,19 @@ public class LinkList {
         if (previous == null){
             first = newLink;
             first.next = current;
-            System.out.println("se inserto "+id+" al inicio");
         }
         else{
-            System.out.println("se inserto "+id+" despues de "+previous.iData);
             previous.next = newLink;
             newLink.next = current;     
         }
+    }
+// -------------------------------------------------------------
+    public Orden getLast(){
+        Link current = first;
+        while(current.next != null){
+            current = current.next;
+        }
+        return current.dData;
     }
 // -------------------------------------------------------------
     public void displayList(){
@@ -75,5 +101,15 @@ public class LinkList {
         }
         current.displayLink();
         System.out.println("");
+    }
+// -------------------------------------------------------------
+    public ArrayList getAll(){
+        ArrayList nodes = new ArrayList<>();
+        Link current = first;
+        while(current != null){
+            nodes.add(current.dData);
+            current = current.next;
+        }
+        return nodes;
     }
 }  // end class LinkList

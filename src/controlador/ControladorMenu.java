@@ -6,37 +6,34 @@ import vista.VistaMenu;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class ControladorMenu implements ActionListener{
-    
-    private VistaMenu menuVista;
-
+    static private VistaMenu menuVista;
+// -------------------------------------------------------------
     public ControladorMenu() {
         this.menuVista = new VistaMenu();
     }
-
+// -------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
         if(ae.getSource() == menuVista.nuevaOrden){
-            System.out.println("Se presionó el botón Nueva Orden");
             menuVista.dispose();
             ControladorOrden cOrden = new ControladorOrden();
             cOrden.iniciarOrden();
         }
         if(ae.getSource() == menuVista.listaOrdenes){
-            System.out.println("Se presionó el botón Lista Ordenes");
-            menuVista.setVisible(false);
+            menuVista.dispose();
             ControladorLista cLista = new ControladorLista();
-            cLista.iniciarLista();
+            cLista.visibilizar();
         }
     }
-    
+// -------------------------------------------------------------
     public void iniciarMenu(){
         menuVista.setVisible(true);
         menuVista.setLocationRelativeTo(null);
         menuVista.listaOrdenes.addActionListener(this);
         menuVista.nuevaOrden.addActionListener(this);
+        //menuVista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

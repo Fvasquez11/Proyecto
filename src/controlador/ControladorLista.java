@@ -2,95 +2,122 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import modelo.LinkList;
 import modelo.Orden;
 import vista.VistaLista;
 
 /**
  *
- * @author fvasq
+ * @author Fernando.vasquez- Paz.muñoz - Francheska.Cardenas - Elizabeth.Henríquez
  */
 public class ControladorLista implements ActionListener{
-    
-    private VistaLista listaVista;
-
+    public static VistaLista listaVista;
+    public static LinkList list;
+    public static ArrayList<Orden> ordenes;
+// -------------------------------------------------------------
     public ControladorLista() {
-        this.listaVista = new VistaLista();
+        listaVista.btnVolver.addActionListener(this);
+        listaVista.btnEliminar.addActionListener(this);
+        listaVista.btnDespachado.addActionListener(this); 
+        listaVista.tableOrdenes.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                listaVista.tableDespachos.clearSelection();
+            }
+            @Override
+            public void focusLost(FocusEvent fe) {
+            }
+        });
+        listaVista.tableDespachos.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent fe) {
+                listaVista.tableOrdenes.clearSelection();
+            }
+            @Override
+            public void focusLost(FocusEvent fe) {
+            }
+        });
     }
-    
+// -------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
+        if(ae.getSource() == listaVista.btnVolver){
+            listaVista.dispose();
+            ControladorMenu cMenu = new ControladorMenu();  // Que se abra la vista de Menu 
+            cMenu.iniciarMenu();
+        }
+        if(ae.getSource() == listaVista.btnDespachado){
+            despacharOrden();
+            actualizarDespacho();
+        }
+        if(ae.getSource() == listaVista.btnEliminar){
+            int o = listaVista.tableOrdenes.getSelectedRow();
+            int d = listaVista.tableDespachos.getSelectedRow();
+            if(o != -1){
+                eliminarOrden(o);
+            }
+            if(d != -1){
+                int id = Integer.parseInt((String) listaVista.tableDespachos.getModel().getValueAt(d, 0));
+                eliminarDespacho(id);
+            }
+        }
     }
-    
-    public void iniciarLista(){
-        this.listaVista.setVisible(true);
-        System.out.println("Se inició la ventana Lista");
-    }
-    
-    
 // -------------------------------------------------------------
-    public void test(){
-        LinkList lista = new LinkList();
-        
-        Orden orden = new Orden();
-        orden.id=1;
-        Date tempDateEm = new Date(121,11,1);
-        orden.emision = tempDateEm;
-        orden.nombre = "Fernando";
-        orden.rut = 123456789;
-        String[] tempArray = {"Lapiz", "Papel"};
-        orden.articulos = tempArray;
-        orden.direccion = "Calle Falsa 123";
-        orden.preparada = true;
-        Date tempDateDesp = new Date(121,11,12);
-        orden.despacho = tempDateDesp;
-        
-        Orden orden2 = new Orden();
-        orden2.id=2;
-        Date tempDateEm2 = new Date(121,11,1);
-        orden2.emision = tempDateEm;
-        orden2.nombre = "Fernando";
-        orden2.rut = 123456789;
-        String[] tempArray2 = {"Cuaderno", "Carpeta"};
-        orden2.articulos = tempArray2;
-        orden2.direccion = "Calle Falsa 123";
-        orden2.preparada = true;
-        Date tempDateDesp2 = new Date(121,11,10);
-        orden2.despacho = tempDateDesp2;
-        
-        Orden orden3 = new Orden();
-        orden3.id=3;
-        Date tempDateEm3 = new Date(121,11,1);
-        orden3.emision = tempDateEm;
-        orden3.nombre = "Fernando";
-        orden3.rut = 123456789;
-        String[] tempArray3 = {"Mochila", "Goma"};
-        orden3.articulos = tempArray3;
-        orden3.direccion = "Calle Falsa 123";
-        orden3.preparada = true;
-        Date tempDateDesp3 = new Date(121,11,20);
-        orden3.despacho = tempDateDesp3;
-        
-        Orden orden4 = new Orden();
-        orden4.id=4;
-        Date tempDateEm4 = new Date(121,11,1);
-        orden4.emision = tempDateEm;
-        orden4.nombre = "Fernando";
-        orden4.rut = 123456789;
-        String[] tempArray4 = {"Calculadora", "Carpeta"};
-        orden4.articulos = tempArray4;
-        orden4.direccion = "Calle Falsa 123";
-        orden4.preparada = true;
-        Date tempDateDesp4 = new Date(121,11,2);
-        orden4.despacho = tempDateDesp4;
-        
-        lista.insertSorted(1, orden);
-        lista.insertSorted(2, orden2);
-        lista.insertSorted(3, orden3);
-        lista.insertSorted(4, orden4);
-        
-        lista.displayList();   
-    } //Test
+    public static void iniciarLista(){
+        ControladorLista.listaVista = new VistaLista();
+        ControladorLista.ordenes = new ArrayList<Orden>();
+        ControladorLista.list = new LinkList();
+    }
+// -------------------------------------------------------------
+    public void visibilizar(){
+        listaVista.setVisible(true);
+        listaVista.setLocationRelativeTo(null);
+    }
+// -------------------------------------------------------------
+    public void agregarDespacho(int id, Orden orden){
+        list.insertSorted(id, orden);
+    }
+// -------------------------------------------------------------
+    public static void agregarOrden(Orden orden){
+        ordenes.add(orden);
+        DefaultTableModel model = (DefaultTableModel) listaVista.tableOrdenes.getModel();
+        model.addRow(ordenes.get(ordenes.size()-1).getDatos());
+    }
+// -------------------------------------------------------------
+    public static void actualizarDespacho(){
+        ArrayList<Orden> allOrdenes = list.getAll();
+        DefaultTableModel model = (DefaultTableModel) listaVista.tableDespachos.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < allOrdenes.size(); i++) {
+            Orden temp = allOrdenes.get(i);
+            model.addRow(temp.getDatos());
+        }
+    }
+// -------------------------------------------------------------
+    public static void despacharOrden(){
+        DefaultTableModel model = (DefaultTableModel) listaVista.tableOrdenes.getModel();
+        int row = listaVista.tableOrdenes.getSelectedRow();
+        if(row >= 0){
+            Orden temp = ordenes.get(row);
+            list.insertSorted(temp.id, temp);
+            ordenes.remove(row);
+            model.removeRow(row);  
+        }      
+    }
+// -------------------------------------------------------------
+    public void eliminarOrden(int id){
+        DefaultTableModel model = (DefaultTableModel) listaVista.tableOrdenes.getModel();
+        ordenes.remove(id);
+        model.removeRow(id);
+    }
+// -------------------------------------------------------------
+    public void eliminarDespacho(int id){
+        DefaultTableModel model = (DefaultTableModel) listaVista.tableDespachos.getModel();
+        list.delete(id);
+        actualizarDespacho();
+    }
 }
